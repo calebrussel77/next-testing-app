@@ -11,6 +11,7 @@
     "lint": "next lint",
     "test": "jest",
     "pre-commit": "lint-staged",
+    "test:ci": "jest --coverage --silent --ci",
     "prepare": "husky install"
   },
   "dependencies": {
