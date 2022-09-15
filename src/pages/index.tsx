@@ -1,10 +1,9 @@
 import type { NextPage } from 'next';
-import styles from '@styles/Home.module.css';
-import Counter from '@components/Counter/Counter';
+import Counter from '@components/counter/counter';
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Counter />
     </div>
   );
