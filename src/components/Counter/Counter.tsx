@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import {useState} from 'react';
 
 type counterProps = {
   defaultCount?: number;
 };
 
-const Counter = ({ defaultCount = 0 }: counterProps) => {
+const Counter = ({defaultCount = 0}: counterProps) => {
   const [count, setCount] = useState<number>(defaultCount);
   const [increment, setIncrement] = useState<number>(1);
 
@@ -16,15 +16,17 @@ const Counter = ({ defaultCount = 0 }: counterProps) => {
     setIncrement(Number(e.target.value) || 1);
 
   return (
-    <div
-      style={{ display: 'flex', justifyItems: 'center', margin: '32px 10px' }}
-    >
+    <div style={{display: 'flex', justifyItems: 'center', margin: '32px 10px'}}>
       <input
         aria-label="Incrementor"
         value={increment}
-        onChange={(e) => handleChangeIncrement(e)}
+        onChange={e => handleChangeIncrement(e)}
       />
-      <button aria-label="add to counter" onClick={handleAddCounter}>
+      <button
+        aria-label="add to counter"
+        className="bg-green-500"
+        onClick={handleAddCounter}
+      >
         +
       </button>
       <p>Your counter is : {count}</p>
