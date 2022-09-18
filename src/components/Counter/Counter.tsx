@@ -21,7 +21,7 @@ const Counter: React.FC<counterProps> = ({defaultCount}) => {
         aria-label="Incrementor"
         type="number"
         min={1}
-        className="border px-3 py-1.5 shadow-sm rounded-sm focus:outline-green-500"
+        className="border px-3 py-1.5 shadow-sm rounded-s m focus:outline-green-500"
         value={increment}
         onChange={e => handleChangeIncrement(e)}
       />
@@ -44,4 +44,4 @@ const Counter: React.FC<counterProps> = ({defaultCount}) => {
   );
 };
 
-export default Counter;
+export {Counter};

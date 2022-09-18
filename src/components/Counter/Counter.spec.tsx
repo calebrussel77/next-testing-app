@@ -1,6 +1,6 @@
 import {fireEvent, render, screen} from '@testing-library/react';
 
-import Counter from './counter';
+import {Counter} from './counter';
 
 const setup = (value: number) => render(<Counter defaultCount={value} />);
 
