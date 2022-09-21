@@ -11,7 +11,7 @@ describe(`Counter`, () => {
     });
 
     it(`Should have current count value equal to 15`, () => {
-      expect(screen.getByText(/Your counter is : 15/)).toBeInTheDocument();
+      expect(screen.getByText('Your counter is : 15')).toBeInTheDocument();
     });
 
     describe(`When the incrementor changes to 5`, () => {
