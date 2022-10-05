@@ -1,13 +1,27 @@
 import {fireEvent, render, screen} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import {ReactElement} from 'react';
 
 import {Counter} from './counter';
 
-const setup = (value: number) => render(<Counter defaultCount={value} />);
+// setup function
+function setup(jsx: ReactElement) {
+  return {
+    user: userEvent.setup(),
+    ...render(jsx),
+  };
+}
 
 describe(`Counter`, () => {
+  const incrementorBtn = screen.getByRole('spinbutton', {name: /incrementor/i});
+  const minusBtn = screen.getByRole('button', {
+    name: /substract to counter/i,
+  });
+  const plusBtn = screen.getByRole('button', {name: /add to counter/i});
+
   describe(`Should have default initialize value equal to 15`, () => {
     beforeEach(() => {
-      setup(15);
+      setup(<Counter defaultCount={15} />);
     });
 
     it(`Should have current count value equal to 15`, () => {
@@ -16,17 +30,16 @@ describe(`Counter`, () => {
 
     describe(`When the incrementor changes to 5`, () => {
       describe(`When plus button is clicked`, () => {
-        beforeEach(() => {
-          fireEvent.change(screen.getByLabelText(/Incrementor/), {
-            target: {value: 5},
-          });
-          fireEvent.click(screen.getByRole('button', {name: 'add to counter'}));
+        beforeEach(async () => {
+          await userEvent.type(incrementorBtn, '5');
+          await userEvent.click(plusBtn);
         });
         it(`Should render incrementor count to 5`, () => {
-          expect(screen.getByLabelText(/Incrementor/)).toHaveValue(Number(5));
+          expect(incrementorBtn).toHaveValue(Number(5));
         });
-        it(`Should render current count to 20`, () => {
-          expect(screen.getByText(/Your counter is : 20/)).toBeInTheDocument();
+        it(`Should render current co unt to 20`, () => {
+          const counterTextDisplay = screen.getByText(/Your counter is : 20/);
+          expect(counterTextDisplay).toBeInTheDocument();
         });
       });
 
@@ -51,7 +64,7 @@ describe(`Counter`, () => {
 
   describe(`Should have default initialize value equal to 0`, () => {
     beforeEach(() => {
-      setup(0);
+      setup(<Counter defaultCount={0} />);
     });
 
     it(`Should render current count to 0`, () => {
