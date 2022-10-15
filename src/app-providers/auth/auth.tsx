@@ -1,7 +1,12 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-
-/* eslint-disable @typescript-eslint/no-empty-function */
-import {createContext, useCallback, useContext, useMemo, useState} from 'react';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import {
+  ReactNode,
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react';
 
 type User = {
   email: string;
@@ -15,15 +20,15 @@ type contextValueProps = {
   logout: () => void;
 };
 
-const AuthContext = createContext({
+const AuthContext = createContext<contextValueProps>({
   user: undefined,
   isAuthenticated: false,
-  login: (form: User) => {},
-  logout: () => {},
+  login: (_data: User) => undefined,
+  logout: () => undefined,
 });
 
-const AuthProvider: React.FC<any> = ({children}) => {
-  const [user, setUser] = useState<User | undefined>(undefined);
+const AuthProvider: React.FC<{children: ReactNode}> = ({children}) => {
+  const [user, setUser] = useState<undefined | User>(undefined);
 
   const login = useCallback(({email, password}: User) => {
     if (email === 'calebrussel77@gmail.com') {
@@ -37,7 +42,7 @@ const AuthProvider: React.FC<any> = ({children}) => {
     setUser(undefined);
   }, []);
 
-  const contextValue = useMemo<any>(
+  const contextValue = useMemo(
     () => ({user, login, isAuthenticated: !!user, logout}),
     [login, logout, user]
   );
