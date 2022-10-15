@@ -5,6 +5,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:jest/recommended',
+    'plugin:jest-dom/recommended',
     'plugin:jest/style',
     'next',
     'next/core-web-vitals',
@@ -30,7 +31,7 @@ module.exports = {
   rules: {
     'testing-library/no-render-in-setup': [
       'error',
-      { allowTestingFrameworkSetupHook: 'beforeEach' },
+      {allowTestingFrameworkSetupHook: 'beforeEach'},
     ],
   },
 };

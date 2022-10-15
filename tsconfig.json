@@ -17,13 +17,15 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["./src/components/*"],
-      "@icons/*": ["./src/components/SVG/*"],
+      "@icons/*": ["./src/components/icons/*"],
       "@utils/*": ["./src/utils/*"],
       "@styles/*": ["./styles/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@common/*": ["./src/common/*"],
-      "@lib/*": ["./src/lib/*"],
-      "@contexts/*": ["./src/contexts/*"]
+      "@api/*": ["./src/api/*"],
+      "@providers/*": ["src/app-providers/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@lib/*": ["./src/lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
