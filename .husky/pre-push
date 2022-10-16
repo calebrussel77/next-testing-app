@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm test -- --watchAll=false
+npm test -- --passWithNoTests --watchAll=false
