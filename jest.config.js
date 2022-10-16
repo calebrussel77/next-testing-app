@@ -8,6 +8,10 @@ module.exports = {
     },
   },
   setupFilesAfterEnv: ['./src/jest.setup.ts'],
+  testMatch: [
+    './src/**/__tests__/**/*.{js,jsx}',
+    './src/**/?(*.)(spec|test).{js,jsx}',
+  ],
   coverageThreshold: {
     global: {
       branches: 100,
