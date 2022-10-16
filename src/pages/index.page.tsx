@@ -12,7 +12,7 @@ const Home: NextPage = () => {
     <div className="max-w-screen-xl mx-auto px-3">
       <Login />
       <Users />
-      <Counter />
+      <Counter isAsync />
       <Application />
       <Skills {...{skills: skillsData}} />
     </div>

@@ -1,5 +1,9 @@
 /* eslint-disable testing-library/no-debugging-utils */
-import {render, screen} from '@testing-library/react';
+import {
+  render,
+  screen,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
 import {rest} from 'msw';
 
 import {server} from '../../mocks/server';
@@ -7,6 +11,13 @@ import {Users} from './users';
 
 describe(`Users`, () => {
   describe(`should be correctly display into the dom`, () => {
+    it('should display a loading text on the screen', async () => {
+      render(<Users />);
+      const loadingText = screen.getByText(/Loading.../);
+      await waitForElementToBeRemoved(loadingText);
+      expect(loadingText).not.toBeInTheDocument();
+    });
+
     it('should display a list of users on the screen', async () => {
       render(<Users />);
       const usersList = await screen.findAllByRole('listitem');

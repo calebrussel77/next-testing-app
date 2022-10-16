@@ -2,15 +2,32 @@ import {useState} from 'react';
 
 type counterProps = {
   defaultCount?: number;
+  isAsync?: boolean;
 };
 
-const Counter: React.FC<counterProps> = ({defaultCount}) => {
+const Counter: React.FC<counterProps> = ({defaultCount, isAsync = false}) => {
   const [count, setCount] = useState<number>(defaultCount || 0);
   const [increment, setIncrement] = useState<number>(1);
 
-  const handleAddCounter = () => setCount(count + increment);
+  const handleAddCounter = () => {
+    if (isAsync) {
+      setTimeout(() => {
+        setCount(count + increment);
+      }, 500);
+      return;
+    }
+    setCount(count + increment);
+  };
 
-  const handleSubstractCounter = () => setCount(count - increment);
+  const handleSubstractCounter = () => {
+    if (isAsync) {
+      setTimeout(() => {
+        setCount(count - increment);
+      }, 500);
+      return;
+    }
+    setCount(count - increment);
+  };
 
   const handleChangeIncrement = (e: React.ChangeEvent<HTMLInputElement>) =>
     setIncrement(Number(e.target.value));

@@ -59,6 +59,22 @@ describe(`Counter`, () => {
     });
   });
 
+  describe('should have default `isAsync` prop set to true', () => {
+    beforeEach(() => {
+      render(<Counter defaultCount={15} isAsync />);
+    });
+
+    it('should render current count to 16 when plus btn is clicked after 200ms', async () => {
+      userEvent.setup();
+      const plusBtn = screen.getByRole('button', {name: /add to counter/i});
+      await userEvent.click(plusBtn);
+      const counterTextDisplay = await screen.findByText(
+        /Your counter is : 16/
+      );
+      expect(counterTextDisplay).toBeInTheDocument();
+    });
+  });
+
   describe(`Should have default initialize value equal to 0`, () => {
     beforeEach(() => {
       render(<Counter defaultCount={0} />);
