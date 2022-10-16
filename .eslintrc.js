@@ -9,6 +9,7 @@ module.exports = {
     'plugin:jest/style',
     'next',
     'next/core-web-vitals',
+    'eslint-config-prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {

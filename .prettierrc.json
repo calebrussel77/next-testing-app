@@ -9,7 +9,7 @@
   "endOfLine": "lf",
   "htmlWhitespaceSensitivity": "css",
   "insertPragma": false,
-  "jsxBracketSameLine": false,
+  "bracketSameLine": false,
   "jsxSingleQuote": false,
   "proseWrap": "always",
   "quoteProps": "as-needed",
@@ -24,6 +24,5 @@
     "^@utils/(.*)$",
     "^@constants/(.*)$",
     "^[./]"
-  ],
-  "extends": ["prettier"]
+  ]
 }

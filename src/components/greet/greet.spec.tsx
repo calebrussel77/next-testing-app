@@ -1,6 +1,7 @@
-import { screen } from '@testing-library/react';
-import { render } from '@testing-library/react';
-import { Greet } from './greet';
+import {screen} from '@testing-library/react';
+import {render} from '@testing-library/react';
+
+import {Greet} from './greet';
 
 /**
  * Greet component should render the text `hello` and if a name is passed into component
