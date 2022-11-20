@@ -1,3 +1,43 @@
+:root {
+  /* #354cd0 => blue */
+  --color-brand-50: 241 244 253;
+  --color-brand-100: 223 231 250;
+  --color-brand-200: 199 212 246;
+  --color-brand-300: 160 185 240;
+  --color-brand-400: 115 148 231;
+  --color-brand-500: 83 113 222;
+  --color-brand-600: 53 76 208;
+  --color-brand-700: 53 66 192;
+  --color-brand-800: 48 56 157;
+  --color-brand-900: 44 52 124;
+
+  /* #aa50a8 */
+  --color-secondary-50: 252 247 252;
+  --color-secondary-100: 248 238 249;
+  --color-secondary-200: 241 219 243;
+  --color-secondary-300: 231 191 232;
+  --color-secondary-400: 218 152 218;
+  --color-secondary-500: 198 111 198;
+  --color-secondary-600: 170 80 168;
+  --color-secondary-700: 140 63 137;
+  --color-secondary-800: 115 53 112;
+  --color-secondary-900: 95 48 92;
+}
+
+.tapestry__theme {
+  /* #aa50a8 */
+  /* --color-brand-50: 252 247 252;
+  --color-brand-100: 248 238 249;
+  --color-brand-200: 241 219 243;
+  --color-brand-300: 231 191 232;
+  --color-brand-400: 218 152 218;
+  --color-brand-500: 198 111 198;
+  --color-brand-600: 170 80 168;
+  --color-brand-700: 140 63 137;
+  --color-brand-800: 115 53 112;
+  --color-brand-900: 95 48 92; */
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

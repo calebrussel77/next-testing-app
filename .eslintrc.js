@@ -30,6 +30,8 @@ module.exports = {
   ignorePatterns: ['.eslintrc.js', '**/*.config.js'],
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
     'testing-library/no-render-in-setup': [
       'error',
       {allowTestingFrameworkSetupHook: 'beforeEach'},
